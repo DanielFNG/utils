@@ -8,7 +8,7 @@ function createDirectories(dir_struct)
 
 dirs = fieldnames(dir_struct);
 for i=1:length(dirs)
-    mkdir(dirs(i));
+    mkdir(dir_struct.(dirs{i}));
 end
 
 end

@@ -8,7 +8,9 @@ function createDirectories(dir_struct)
 
 dirs = fieldnames(dir_struct);
 for i=1:length(dirs)
-    mkdir(dir_struct.(dirs{i}));
+    if ~exist(dir_struct.(dirs{i}), 'dir')
+        mkdir(dir_struct.(dirs{i}));
+    end
 end
 
 end
